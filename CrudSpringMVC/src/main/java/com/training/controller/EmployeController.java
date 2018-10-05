@@ -58,7 +58,7 @@ public class EmployeController {
 	public ModelAndView update(HttpServletRequest req) {
 		int employeeId = Integer.parseInt(req.getParameter("id"));
 		Employee emp = employeService.findById(employeeId);
-		ModelAndView model = new ModelAndView("EmployeeForm");
+		ModelAndView model = new ModelAndView("EmployeForm");
 		model.addObject("emp", emp);
 		return model;
 	}
