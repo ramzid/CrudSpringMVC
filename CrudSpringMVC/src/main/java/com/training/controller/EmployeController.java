@@ -41,8 +41,11 @@ public class EmployeController {
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute Employee emp) {
+		
+		if(employeService.findById(emp.getId())==null)
 		employeService.add(emp);
-
+		else
+			employeService.update(emp);
 		return new ModelAndView("redirect:/");
 	}
 
